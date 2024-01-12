@@ -1,30 +1,30 @@
 ## IT Army of Ukraine Official Tool
 
-#### [English version - click here](/README-EN.md)
-#### 💁 [Технічна підтримка](https://t.me/+H6PnjkydZX0xNDky)
-### ⭐ Переваги
+#### See [Configuration and options](#-configuration-and-options) on how to change the interface language
+#### 💁 [Technical support](https://t.me/+H6PnjkydZX0xNDky)
+### ⭐ Advantages
 
-- Власна база проксі забезпечує атаку з усіх кінців світу, що значно ускладнює захист від неї
-- Ефективна робота з великою кількістю цілей одночасно
-- Безліч різноманітних методів, як "класичних", так і авторських
-- Постійні покращення, автоматичні оновлення без втручання користувача
+- Own proxy database creates the attack from the whole world, which makes it much more difficult to protect against
+- Efficient on a large number of targets simultaneously
+- A variety of different methods, both "classic" and proprietary ones
+- Frequent automatic updates without user intervention
 
-### 💽 Встановлення та запуск
+### 💽 Install and run 
 
-Увага! Оновлення відбуваються автоматично, усі пункти окрім останнього треба виконувати лише в перший раз!
+Attention! Updates happen automatically, all steps except the last one need to be done only at the first time!
 
 ### Windows
 
-У нашому ПО немає вірусів, але деякі антивіруси визначають ПО для атак як потенційно небезпечне, і блокують файли.
-Можливо, вам доведеться дозволити виконання завантаженого файлу, або вимкнути свій антивірус.
+Our software does not contain viruses, but some antiviruses identify such software as potentially dangerous and block the files.
+You may need to allow running the downloaded file, or disable your antivirus.
 
-1. Завантажте останню [x64 версію](https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/releases/latest/download/mhddos_proxy_win.exe)
-   (або [x86 (32-bit)](https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/releases/latest/download/mhddos_proxy_win_x86.exe) версію за потреби)
-   і збережіть у зручному місці
-2. Щоб розпочати, просто запустіть файл подвійним кліком
+1. Download the latest [x64 version](https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/releases/latest/download/mhddos_proxy_win.exe)
+   (or [x86 (32-bit)](https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/releases/latest/download/mhddos_proxy_win_x86.exe) version if needed)
+   and save to a convenient location
+2. To start the attack, simply launch the file by double-click
 
 ### Linux
-1\. Завантажте версію для своєї платформи
+1\. Download the appropriate version for your platform
 ##### x64 (amd64)
 ```
 curl https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/releases/latest/download/mhddos_proxy_linux -Lo mhddos_proxy_linux 
@@ -38,77 +38,77 @@ curl https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/releases/
 curl https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/releases/latest/download/mhddos_proxy_linux_arm64 -Lo mhddos_proxy_linux 
 ```
 
-2\. Далі, виконайте `chmod +x mhddos_proxy_linux`  
-3\. Для початку атаки, виконуйте `./mhddos_proxy_linux` напряму або всередині `screen`
+2\. Next, run `chmod +x mhddos_proxy_linux`
+3\. To start the attack, run `./mhddos_proxy_linux` directly or inside `screen`
 
-Для збільшення ліміту на кількість потоків, виконайте наступну команду (працює до перезапуску системи)
+To increase max threads limit, use the following command (repeat after system reboot)
 ```
 sudo sysctl -w net.ipv4.ip_local_port_range="16384 65535"
 ```
-або щоб зробити налаштування постійним
+or to make it persistent
 ```
-sudo echo 'net.ipv4.ip_local_port_range=16384 65535' >> /etc/sysctl.conf && sudo sysctl -p
+sudo echo 'net.ipv4.ip_local_port_range=16384 65535'>> /etc/sysctl.conf && sudo sysctl -p
 ```
 
-### Docker (будь-яка платформа)
+### Docker (any platform)
 
-1. Встановіть та запустіть [Docker](https://docs.docker.com/desktop/#download-and-install)
-2. Запускайте командою `docker run -it --rm --pull always --net=host ghcr.io/porthole-ascend-cinnamon/mhddos_proxy`
+1. Install and launch [Docker](https://docs.docker.com/desktop/#download-and-install)
+2. Run with the command `docker run -it --rm --pull always --net=host ghcr.io/porthole-ascend-cinnamon/mhddos_proxy`
 
 ### Raspberry Pi
-Aarch64 версія має працювати на RPi4, можливо і на RPi3. Головне - 64x розрядна OS.  
-Перегляньте наступні Issues для додаткової інформації та вирішення проблем: 
-https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/issues/13 
+Aarch64 version should work on RPi4, probably on RPi3 too. The main thing is to have 64x OS.  
+Please refer to these Issues for extra info and potential solutions:
+https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/issues/13
 https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/issues/19
 https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/issues/23
 
-### 🛠 Налаштування та параметри
+### 🛠 Configuration and options
 
-При першому запуску в поточній папці буде створено файл **mhddos.ini**  
-Відредагуйте його для зміни налаштувань
+An **mhddos.ini** file will be created in the current directory on the first launch  
+You may edit it to change configuration
 
-    # Зміна мови (ua | en | es | de | pl | lt)
+    # Change language (ua | en | es | de | pl | lt)
     lang = ua
 
-    # Запуск декількох копій (вкажіть "auto" для максимального значення, при наявності 3+ ядер CPU та стабільної мережі)
+    # Run multiple copies (set "auto" for max value, requires 3+ core CPU and stable network)
     copies = 1
 
-    # Кількість потоків на кожну копію (для активації приберіть решітку на наступному рядку)
+    # Number of threads per copy (to enable, remove the hashtag symbol on the next line)
     #threads = 8000
 
-    # Атака через мій IP/VPN у % від 0 до 100 (обов'язковий VPN чи віддалений сервер)
+    # Use my IP/VPN for the attack in % from 0 to 100 (requires VPN or remote server)
     use-my-ip = 0
 
-Окрім того, параметри можна задавати у командному рядку у форматі `--lang en`
+You can also specify options via command line in `--lang en`  format
 
-Повний перелік опцій доступний за командою `--help`
+Full list of options is available by `--help` command
 
-### 👫 Ком'юніті (unofficial)
+### 👫 Community (mostly in Ukrainian)
 
-- [Нотифікації у Telegram](https://github.com/sadviq99/mhddos_proxy-setup)
-- [Linux VM для M1/M2 Mac](https://gist.github.com/prikid/0cd17e45800f3d4faea6a2be58e8979f) (якщо проблеми з Docker)
+- [Notification to Telegram](https://github.com/sadviq99/mhddos_proxy-setup)
+- [Linux VM for M1/M2 Mac](https://gist.github.com/prikid/0cd17e45800f3d4faea6a2be58e8979f) (in case of Docker issues)
 - [VPN](https://auto-ddos.notion.site/VPN-5e45e0aadccc449e83fea45d56385b54)
-- [Безкоштовні сервери](https://auto-ddos.notion.site/dd91326ed30140208383ffedd0f13e5c)
+- [Free cloud servers](https://auto-ddos.notion.site/dd91326ed30140208383ffedd0f13e5c)
 
-### ✪ Власні проксі
+### ✪ Custom proxies
 <details>
-<summary>Розгорнути</summary>
+<summary>Expand</summary>
 
-Для того, щоб вказати власні проксі використовуйте опцію `proxy`
+To specify custom proxy(ies), use the `proxy` option
 
     proxy = [socks4://114.231.123.38:3065, socks5://114.231.123.38:1080]
 
-Якщо перелік проксі занадто великий, скористайтеся опцією передачі через локальний чи віддалений файл `proxies`,
-кожен проксі з нового рядка
+If the list of proxies is too big, use the local or remote file option `proxies`. 
+Each proxy should be on a new line
 
     proxies = proxies.txt | https://pastebin.com/raw/UkFWzLOt
 
-Звичайно, ці опції доступні і з командного рядка
+Surely, these options are also available via command line
 
-    --proxy socks4://114.231.123.38:3065 socks5://114.231.123.38:1080
+    --proxy socks4://114.231.123.38:3065, socks5://114.231.123.38:1080
     --proxies proxies.txt | https://pastebin.com/raw/UkFWzLOt
 
-#### Підтримувані формати:
+#### Supported formats:
 
     114.231.123.38:3065
     114.231.123.38:3065:username:password
@@ -117,7 +117,5 @@ https://github.com/porthole-ascend-cinnamon/mhddos_proxy_releases/issues/23
     socks5://114.231.123.38:3065:username:password
     http://username:password@114.231.123.38:3065
 
-якщо протокол (`socks4`|`socks5`) не вказано, то буде обрано `http`
+if protocol (`socks4`|`socks5`) is not specified, `http` is used by default
 </details>
-
-
